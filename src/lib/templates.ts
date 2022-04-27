@@ -5,9 +5,11 @@ interface StringMap {
 }
 
 export const DEFAULT_TEMPLATE_ID = 'minimal';
-
+const comments = require("./templates_comment");
 export const TEMPLATES: StringMap = {
-  [DEFAULT_TEMPLATE_ID]: '/* Copyright (c) $from$to $copyrightHolder */',
+  [DEFAULT_TEMPLATE_ID]: `/* 
+${comments.info}
+ $copyrightHolder */`,
   apache: `
 /*
  * Copyright $from$to $copyrightHolder
